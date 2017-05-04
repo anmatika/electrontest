@@ -26,14 +26,24 @@ class Crypter extends Component {
       this.props.encryptAsync();
   }
 
+  decrypt(e) {
+      this.props.decryptAsync();
+  }
+
   messageOnChange(e) {
-      console.log('messageonchange', e.target.value);
       this.props.messageChanged(e.target.value);
   }
 
   secretOnChange(e) {
-      console.log('secretonchange', e.target.value);
       this.props.secretChanged(e.target.value);
+  }
+
+  secretDecryptOnChange(e) {
+      this.props.decryptSecretChanged(e.target.value);
+  }
+
+  hashDecryptOnChange(e) {
+      this.props.decryptHashChanged(e.target.value);
   }
 
   render() {
@@ -51,6 +61,11 @@ class Crypter extends Component {
           <input type="text" placeholder="secret" onChange={this.secretOnChange.bind(this)}/>
           <button type="text" onClick={this.encrypt.bind(this)}>Encrypt</button>
           <textarea value={state.hash}></textarea>
+          <br />
+          <input type="text" placeholder="hash" onChange={this.hashDecryptOnChange.bind(this)} />
+          <input type="text" placeholder="secret" onChange={this.secretDecryptOnChange.bind(this)}/>
+          <button type="text" onClick={this.decrypt.bind(this)}>Decrypt</button>
+          <textarea value={state.decryptedMessage}></textarea>
           <div className={styles.backButton} data-tid="backButton">
             <Link to="/">
               <i className="fa fa-arrow-left fa-3x" />
