@@ -1,27 +1,13 @@
 // @flow
 import React, { Component } from 'react';
-
-import crypter from 'aes192-anmatika';
 import { Link } from 'react-router-dom';
 import styles from './Counter.css';
 
 class Crypter extends Component {
-  constructor(){
-      super();
-  }
   props: {
      encrypt: () => void
   };
 
-    /* static encrypt(message, secret) {
-     *   const hash = crypter.encrypt(message, secret);
-     *   console.log('hash', hash);
-     * }
-
-     * static decrypt(hash, secret) {
-     *   return crypter.decrypt(hash, secret);
-     * }
-     */
   encrypt(e) {
       this.props.encryptAsync();
   }
@@ -31,11 +17,11 @@ class Crypter extends Component {
   }
 
   messageOnChange(e) {
-      this.props.messageChanged(e.target.value);
+      this.props.encryptMessageChanged(e.target.value);
   }
 
   secretOnChange(e) {
-      this.props.secretChanged(e.target.value);
+      this.props.encryptSecretChanged(e.target.value);
   }
 
   secretDecryptOnChange(e) {
@@ -53,7 +39,7 @@ class Crypter extends Component {
        *         .catch(err => console.log('err', err));
        */
       /* console.log('foo')*/
-    const { encryptAsync, messageChanged, secretChanged, state } = this.props;
+    const { encryptAsync, encryptMessageChanged, encryptSecretChanged, state } = this.props;
     console.log('crypter.state', state);
     return (
       <div>

@@ -2,8 +2,8 @@
 import aes from 'aes192-anmatika';
 export const ENCRYPT = 'ENCRYPT';
 export const DECRYPT = 'DECRYPT';
-export const MESSAGE_CHANGED = 'MESSAGE_CHANGED';
-export const SECRET_CHANGED = 'SECRET_CHANGED';
+export const ENCRYPT_MESSAGE_CHANGED = 'ENCRYPT_MESSAGE_CHANGED';
+export const ENCRYPT_SECRET_CHANGED = 'ENCRYPT_SECRET_CHANGED';
 export const DECRYPT_HASH_CHANGED = 'DECRYPT_HASH_CHANGED';
 export const DECRYPT_SECRET_CHANGED = 'DECRYPT_SECRET_CHANGED';
 
@@ -21,13 +21,6 @@ export function decrypt(data) {
       data
   };
 };
-export function incrementAsync(delay: number = 1000) {
-  return (dispatch: () => void) => {
-    setTimeout(() => {
-      dispatch(increment());
-    }, delay);
-  };
-}
 
 export function encryptAsync(data) {
   return (dispatch: () => void, getState) => {
@@ -59,16 +52,16 @@ export function decryptSecretChanged(data){
   };
 }
 
-export function messageChanged(data){
+export function encryptMessageChanged(data){
   return {
-      type: MESSAGE_CHANGED,
+      type: ENCRYPT_MESSAGE_CHANGED,
       data
   };
 }
 
-export function secretChanged(data){
+export function encryptSecretChanged(data){
   return {
-      type: SECRET_CHANGED,
+      type: ENCRYPT_SECRET_CHANGED,
       data
   };
 }

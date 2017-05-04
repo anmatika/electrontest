@@ -1,5 +1,5 @@
 // @flow
-import { ENCRYPT, DECRYPT, DECRYPT_HASH_CHANGED, DECRYPT_SECRET_CHANGED, MESSAGE_CHANGED, SECRET_CHANGED } from '../actions/crypter';
+import { ENCRYPT, DECRYPT, DECRYPT_HASH_CHANGED, DECRYPT_SECRET_CHANGED, ENCRYPT_MESSAGE_CHANGED, ENCRYPT_SECRET_CHANGED } from '../actions/crypter';
 
 export default function crypter(state = {}, action) {
   switch (action.type) {
@@ -26,12 +26,12 @@ export default function crypter(state = {}, action) {
       console.log('action.data', action.data);
       return Object.assign({}, state, { decryptSecret: action.data });
 
-    case MESSAGE_CHANGED:
+    case ENCRYPT_MESSAGE_CHANGED:
       console.log('state', state);
       console.log('action.data', action.data);
       return Object.assign({}, state, { message: action.data });
 
-    case SECRET_CHANGED:
+    case ENCRYPT_SECRET_CHANGED:
       console.log('state', state);
       console.log('action.data', action.data);
       return Object.assign({}, state, { secret: action.data });
