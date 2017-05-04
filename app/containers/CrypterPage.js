@@ -1,11 +1,11 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Crypter from '../components/Crypter';
-import * as CrypterActions from '../actions/counter';
+import * as CrypterActions from '../actions/crypter';
 
 function mapStateToProps(state) {
     return {
-        crypter: state.crypter
+      state: state.crypter
     };
 }
 
