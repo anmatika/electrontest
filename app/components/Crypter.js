@@ -2,56 +2,20 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Counter.css';
+import CrypterEncrypt from './CrypterEncrypt';
+import CrypterDecrypt from './CrypterDecrypt';
 
 class Crypter extends Component {
   props: {
      encrypt: () => void
   };
 
-  encrypt(e) {
-      this.props.encryptAsync();
-  }
-
-  decrypt(e) {
-      this.props.decryptAsync();
-  }
-
-  messageOnChange(e) {
-      this.props.encryptMessageChanged(e.target.value);
-  }
-
-  secretOnChange(e) {
-      this.props.encryptSecretChanged(e.target.value);
-  }
-
-  secretDecryptOnChange(e) {
-      this.props.decryptSecretChanged(e.target.value);
-  }
-
-  hashDecryptOnChange(e) {
-      this.props.decryptHashChanged(e.target.value);
-  }
-
   render() {
-      /* Crypter.encrypt('foo', 'bar');
-       * Crypter.decrypt('80a7dd847ac22852b5f83d8145386b94', 'bar')
-       *         .then(message => console.log('message', message))
-       *         .catch(err => console.log('err', err));
-       */
-      /* console.log('foo')*/
-    const { encryptAsync, encryptMessageChanged, encryptSecretChanged, state } = this.props;
-    console.log('crypter.state', state);
     return (
       <div>
-          <input type="text" placeholder="message" onChange={this.messageOnChange.bind(this)} />
-          <input type="text" placeholder="secret" onChange={this.secretOnChange.bind(this)}/>
-          <button type="text" onClick={this.encrypt.bind(this)}>Encrypt</button>
-          <textarea value={state.hash}></textarea>
+          <CrypterEncrypt {...this.props} />
+          <CrypterDecrypt {...this.props} />
           <br />
-          <input type="text" placeholder="hash" onChange={this.hashDecryptOnChange.bind(this)} />
-          <input type="text" placeholder="secret" onChange={this.secretDecryptOnChange.bind(this)}/>
-          <button type="text" onClick={this.decrypt.bind(this)}>Decrypt</button>
-          <textarea value={state.decryptedMessage}></textarea>
           <div className={styles.backButton} data-tid="backButton">
             <Link to="/">
               <i className="fa fa-arrow-left fa-3x" />

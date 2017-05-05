@@ -13,14 +13,14 @@ export function encrypt(data) {
       type: ENCRYPT,
       data
   };
-};
+}
 
 export function decrypt(data) {
   return {
       type: DECRYPT,
       data
   };
-};
+}
 
 export function encryptAsync(data) {
   return (dispatch: () => void, getState) => {

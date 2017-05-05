@@ -18,6 +18,7 @@
     "flowtype/use-flow-type": 2,
     "flowtype/valid-syntax": 2,
     "flowtype-errors/show-errors": 2,
-    "indent": ["off"]
+    "indent": ["off"],
+    "react/jsx-indent": ["off"]
   }
 }
