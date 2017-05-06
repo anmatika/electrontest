@@ -185,7 +185,6 @@
   },
   "dependencies": {
     "aes192-anmatika": "^1.0.0",
-    "crypter_anmatika": "^1.0.0",
     "electron-debug": "^1.1.0",
     "extract-text-webpack-plugin": "^2.1.0",
     "font-awesome": "^4.7.0",
