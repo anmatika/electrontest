@@ -6,6 +6,7 @@ import App from './containers/App';
 import HomePage from './containers/HomePage';
 import CounterPage from './containers/CounterPage';
 import CrypterPage from './containers/CrypterPage';
+import PoloniexPage from './containers/PoloniexPage';
 
 export default () => (
   <Router>
@@ -13,6 +14,7 @@ export default () => (
       <Switch>
         <Route path="/counter" component={CounterPage} />
         <Route path="/crypter" component={CrypterPage} />
+        <Route path="/poloniex" component={PoloniexPage} />
         <Route path="/" component={HomePage} />
       </Switch>
     </App>

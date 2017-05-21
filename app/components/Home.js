@@ -11,6 +11,7 @@ export default class Home extends Component {
           <h2>Home</h2>
           <Link to="/counter">to Counter</Link>
           <Link to="/crypter">to Crypter</Link>
+          <Link to="/poloniex">to Poloniex</Link>
         </div>
       </div>
     );
