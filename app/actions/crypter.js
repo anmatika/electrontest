@@ -1,5 +1,6 @@
 // @flow
-import aes from 'aes192-anmatika';
+import crypto from 'crypto-js';
+
 export const ENCRYPT = 'ENCRYPT';
 export const DECRYPT = 'DECRYPT';
 export const ENCRYPT_MESSAGE_CHANGED = 'ENCRYPT_MESSAGE_CHANGED';
@@ -25,16 +26,16 @@ export function decrypt(data) {
 export function encryptAsync(data) {
   return (dispatch: () => void, getState) => {
       const state = getState().crypter;
-      const hash = aes.encrypt(state.message, state.secret);
+      const hash = crypto.AES.encrypt(state.message, state.secret);
       dispatch(encrypt(hash));
   };
 }
 export function decryptAsync(data) {
   return (dispatch: () => void, getState) => {
       const state = getState().crypter;
-      aes.decrypt(state.decryptHash, state.decryptSecret).then(message => {
-        dispatch(decrypt(message));
-      });
+      const bytes = crypto.AES.decrypt(state.decryptHash, state.decryptSecret);
+      const plaintext = bytes.toString(crypto.enc.Utf8);
+      dispatch(decrypt(plaintext));
   };
 }
 
