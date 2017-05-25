@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'react-bootstrap';
 
 const CrypterDecrypt = ({ decryptAsync, decryptHashChanged, decryptSecretChanged, state }) => {
     function decrypt() {
@@ -15,10 +16,10 @@ const CrypterDecrypt = ({ decryptAsync, decryptHashChanged, decryptSecretChanged
 
     return (
         <div>
-            <input type="text" placeholder="hash" onChange={hashDecryptOnChange} />
-            <input type="text" placeholder="secret" onChange={secretDecryptOnChange}/>
-            <button type="text" onClick={decrypt}>Decrypt</button>
-            <textarea value={state.decryptedMessage} />
+            <textarea placeholder="hash" rows="12" onChange={hashDecryptOnChange} />
+            <textarea placeholder="secret" rows="12"onChange={secretDecryptOnChange}/>
+            <Button bsStyle="primary" onClick={decrypt}>Decrypt</Button>
+            <textarea value={state.decryptedMessage} rows="12" />
         </div>);
 };
 

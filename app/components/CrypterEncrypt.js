@@ -15,10 +15,10 @@ const CrypterEncrypt = ({ encryptAsync, encryptMessageChanged, encryptSecretChan
 
     return (
       <div>
-          <input type="text" placeholder="message" onChange={messageOnChange} />
-          <input type="text" placeholder="secret" onChange={secretOnChange} />
-          <button type="text" onClick={encrypt}>Encrypt</button>
-          <textarea value={state.hash} />
+          <textarea rows="12" placeholder="message" onChange={messageOnChange} />
+          <textarea rows="12" placeholder="secret" onChange={secretOnChange} />
+          <button onClick={encrypt}>Encrypt</button>
+          <textarea value={state.hash} rows="12" />
       </div>);
 };
 export default CrypterEncrypt;
