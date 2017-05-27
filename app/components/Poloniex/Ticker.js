@@ -1,15 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Poloniex = ({ state, getBalancesAsync }) => {
+const Ticker = ({ state, showTickerAsync }) => {
     function onClick(e) {
-        getBalancesAsync();
+        showTickerAsync();
     }
     return (
     <div>
-          Poloniex
-          <textarea value={state.balances} />
-          <button onClick={onClick}>Show balances</button>
+          Ticker
+          <textarea value={state.ticker} />
+          <button onClick={onClick}>Show ticker</button>
 
           <Link to="/">
              <i className="fa fa-arrow-left fa-3x" />
@@ -17,4 +17,4 @@ const Poloniex = ({ state, getBalancesAsync }) => {
     </div>);
  };
 
-export default Poloniex;
+export default Ticker;
