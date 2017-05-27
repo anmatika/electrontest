@@ -27,6 +27,7 @@ export function encryptAsync(data) {
   return (dispatch: () => void, getState) => {
       const state = getState().crypter;
       const hash = crypto.AES.encrypt(state.message, state.secret);
+      
       dispatch(encrypt(hash));
   };
 }

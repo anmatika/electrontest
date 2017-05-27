@@ -1,4 +1,5 @@
-import { tradingApi } from 'poloniex-api';
+// import { tradingApi } from 'poloniex-api';
+import tradingApi from './tradingApi';
 import keys from '../../../keys/apikeys';
 
 export const GET_BALANCES = 'GET_BALANCES';
