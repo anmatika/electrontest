@@ -13,12 +13,14 @@ const OpenOrders = ({ state, showOpenOrdersAsync }) => {
 
         state.openOrders.forEach((currency) => {
             currency.value.forEach((value) => {
-                const row = { currency: currency.key };
-                row.amount = value.amount;
-                row.rate = value.rate;
-                row.total = value.total;
-                row.type = value.type;
-                row.orderNumber = value.orderNumber;
+                const row = {
+                    currency: currency.key,
+                    amount: value.amount,
+                    rate: value.rate,
+                    total: value.total,
+                    type: value.type,
+                    orderNumber: value.orderNumber
+                };
                 rows.push(row);
             });
         });
