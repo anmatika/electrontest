@@ -2,7 +2,7 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import { Field, reduxForm } from 'redux-form';
-import Error from '../Error';
+import Message from '../Message';
 
 const Buy = (props) => {
     const onSubmit = (values) => {
@@ -14,7 +14,7 @@ const Buy = (props) => {
     };
 
     return (<form onSubmit={onSubmit}>
-            <Error {...props} />
+            <Message {...props} />
             <h2>Buy</h2>
             <Field component="input" name="currencyPair" type="text" placeholder="currency pair" />
             <Field component="input" name="amount" type="text" placeholder="amount" />

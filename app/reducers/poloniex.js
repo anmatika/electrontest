@@ -1,5 +1,5 @@
 // @flow
-import { GET_BALANCES, SHOW_OPEN_ORDERS, SET_INITIAL_VALUES, SHOW_ERROR } from '../actions/poloniex';
+import { GET_BALANCES, SHOW_OPEN_ORDERS, SET_INITIAL_VALUES, SHOW_MESSAGE } from '../actions/poloniex';
 import objecthelper from '../utils/objectHelper';
 
 export default function crypter(state = {}, action) {
@@ -26,8 +26,8 @@ export default function crypter(state = {}, action) {
       console.log('pruned', pruned);
       return Object.assign({}, state, { openOrders: pruned });
     
-    case SHOW_ERROR:
-      return Object.assign({}, state, { errorText: action.data });
+    case SHOW_MESSAGE:
+      return Object.assign({}, state, { message: action.data });
     
     default:
       console.log('state default', state);

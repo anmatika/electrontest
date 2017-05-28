@@ -12,14 +12,15 @@ const OpenOrders = ({ state, showOpenOrdersAsync }) => {
         if (!state.openOrders) return rows;
 
         state.openOrders.forEach((currency) => {
-            const row = { currency: currency.key };
             currency.value.forEach((value) => {
+                const row = { currency: currency.key };
                 row.amount = value.amount;
                 row.rate = value.rate;
                 row.total = value.total;
                 row.type = value.type;
+                row.orderNumber = value.orderNumber;
+                rows.push(row);
             });
-            rows.push(row);
         });
         return rows;
     }
@@ -29,7 +30,8 @@ const OpenOrders = ({ state, showOpenOrdersAsync }) => {
         { key: 'amount', name: 'Amount' },
         { key: 'type', name: 'Type' },
         { key: 'total', name: 'Total' },
-        { key: 'rate', name: 'Rate' }
+        { key: 'rate', name: 'Rate' },
+        { key: 'orderNumber', name: 'OrderNumber' },
         ];
 
     return (<div>

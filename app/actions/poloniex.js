@@ -9,7 +9,7 @@ export const SHOW_TICKER = 'SHOW_TICKER';
 export const SHOW_OPEN_ORDERS = 'SHOW_OPEN_ORDERS';
 export const SET_INITIAL_VALUES = 'SET_INITIAL_VALUES';
 export const BUY = 'BUY';
-export const SHOW_ERROR = 'SHOW_ERROR';
+export const SHOW_MESSAGE = 'SHOW_MESSAGE';
 
 const api = tradingApi.create(keys.poloniex_api_key, keys.poloniex_secret);
 
@@ -47,9 +47,9 @@ export function showOpenOrders(data) {
   };
 }
 
-export function showError(data) {
+export function showMessage(data) {
   return {
-      type: SHOW_ERROR,
+      type: SHOW_MESSAGE,
       data
   };
 }
@@ -78,9 +78,14 @@ export function showOpenOrdersAsync() {
 export function buyAsync({ currencyPair, amount, rate }) {
   return (dispatch: () => void, getState) => {
     api.buy({ currencyPair, amount, rate }).then(msg => {
-      return console.log(msg.body);
+      const converted = objectHelper.objectToArray(JSON.parse(msg.body));
+      if (!converted.orderNumber) {
+        return dispatch(showMessage(msg.body));
+      }
+      dispatch(buy(converted));
+      return dispatch(showMessage(msg.body));
     }).catch(err => {
-      dispatch(showError(err));
+      dispatch(showMessage(err));
     });
   };
 }
