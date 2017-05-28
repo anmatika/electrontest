@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDataGrid from 'react-data-grid';
-import './Grid.css';
 
 const Grid = ({ rows, columns }) => {
 
     function rowGetter(i) {
         return rows[i];
     }
+
     if (!rows) return (<div />);
 
     return (

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'react-bootstrap';
 import Grid from './Grid';
 
 const ShowBalances = ({ state, getBalancesAsync }) => {
@@ -23,7 +24,7 @@ const ShowBalances = ({ state, getBalancesAsync }) => {
     <div>
         <h2>Balances</h2>
         <Grid rows={getRows()} columns={columns} />
-        <button onClick={onClick}>Show balances</button>
+        <Button bsStyle="primary" onClick={onClick} >Show balances</Button>
     </div>);
  };
 

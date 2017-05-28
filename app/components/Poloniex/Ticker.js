@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'react-bootstrap';
 
 const Ticker = ({ state, showTickerAsync }) => {
     function onClick(e) {
@@ -8,7 +9,7 @@ const Ticker = ({ state, showTickerAsync }) => {
     <div>
           <h2>Ticker</h2>
           <textarea value={state.ticker} />
-          <button onClick={onClick}>Show ticker</button>
+          <Button bsStyle="primary" onClick={onClick} >Show ticker</Button>
     </div>);
  };
 

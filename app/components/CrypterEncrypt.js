@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'react-bootstrap';
 
 const CrypterEncrypt = ({ encryptAsync, encryptMessageChanged, encryptSecretChanged, state }) => {
     function encrypt() {
@@ -17,7 +18,7 @@ const CrypterEncrypt = ({ encryptAsync, encryptMessageChanged, encryptSecretChan
       <div>
           <textarea rows="12" placeholder="message" onChange={messageOnChange} />
           <textarea rows="12" placeholder="secret" onChange={secretOnChange} />
-          <button onClick={encrypt}>Encrypt</button>
+          <Button bsStyle="primary" onClick={encrypt} >Encrypt</Button>
           <textarea value={state.hash} rows="12" />
       </div>);
 };

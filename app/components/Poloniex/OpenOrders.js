@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'react-bootstrap';
 import Grid from './Grid';
 
 const OpenOrders = ({ state, showOpenOrdersAsync }) => {
@@ -34,7 +35,8 @@ const OpenOrders = ({ state, showOpenOrdersAsync }) => {
     return (<div>
             <h2>Open orders</h2>
             <Grid rows={getRows()} columns={columns} />
-            <button onClick={onClick}>Show OpenOrders</button>
+            <Button bsStyle="primary" onClick={onClick} >Show OpenOrders</Button>
+
         </div>);
  };
 
