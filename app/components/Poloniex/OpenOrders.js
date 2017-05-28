@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import Grid from './Grid';
+import CancelOrderButton from './CancelOrderButton';
 
 const OpenOrders = ({ state, showOpenOrdersAsync }) => {
     function onClick() {
@@ -34,6 +35,7 @@ const OpenOrders = ({ state, showOpenOrdersAsync }) => {
         { key: 'total', name: 'Total' },
         { key: 'rate', name: 'Rate' },
         { key: 'orderNumber', name: 'OrderNumber' },
+        { key: 'cancelOrder', name: 'CancelOrder', formatter: CancelOrderButton }
         ];
 
     return (<div>
