@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import ShowBalances from './ShowBalances';
 import Ticker from './Ticker';
 import OpenOrders from './OpenOrders';
+import Buy from './Buy';
 
 class Poloniex extends React.Component {
       componentDidMount() {
@@ -21,6 +22,7 @@ class Poloniex extends React.Component {
                               <Tab>Balances</Tab>
                               <Tab>Ticker</Tab>
                               <Tab>Open orders</Tab>
+                              <Tab>Buy</Tab>
                         </TabList>
                         <TabPanel>
                               <ShowBalances {...this.props} />
@@ -30,6 +32,9 @@ class Poloniex extends React.Component {
                         </TabPanel>
                         <TabPanel>
                               <OpenOrders {...this.props} />
+                        </TabPanel>
+                        <TabPanel>
+                              <Buy {...this.props} />
                         </TabPanel>
                   </Tabs>
             </div>);
