@@ -1,11 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Grid from './Grid';
 
 const OpenOrders = ({ state, showOpenOrdersAsync }) => {
-    function onClick(e) {
+    function onClick() {
         showOpenOrdersAsync();
     }
+
     function getRows() {
         const rows = [];
         if (!state.openOrders) return rows;
@@ -23,12 +23,19 @@ const OpenOrders = ({ state, showOpenOrdersAsync }) => {
         return rows;
     }
 
-  return (
-    <div>
-          OpenOrders
-          <Grid rows={getRows()} />
-          <button onClick={onClick}>Show OpenOrders</button>
-    </div>);
+    const columns = [
+        { key: 'currency', name: 'Currency' },
+        { key: 'amount', name: 'Amount' },
+        { key: 'type', name: 'Type' },
+        { key: 'total', name: 'Total' },
+        { key: 'rate', name: 'Rate' }
+        ];
+
+    return (<div>
+            <h2>Open orders</h2>
+            <Grid rows={getRows()} columns={columns} />
+            <button onClick={onClick}>Show OpenOrders</button>
+        </div>);
  };
 
 export default OpenOrders;

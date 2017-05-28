@@ -1,4 +1,5 @@
 import React from 'react';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { Link } from 'react-router-dom';
 import ShowBalances from './ShowBalances';
 import Ticker from './Ticker';
@@ -14,10 +15,23 @@ class Poloniex extends React.Component {
             <div>
                   <Link to="/">
                         <i className="fa fa-arrow-left fa-3x" />
-                  </Link> <ShowBalances {...this.props} />
-                  <Ticker {...this.props} />
-                  <OpenOrders {...this.props} />
-
+                  </Link>
+                  <Tabs>
+                        <TabList>
+                              <Tab>Balances</Tab>
+                              <Tab>Ticker</Tab>
+                              <Tab>Open orders</Tab>
+                        </TabList>
+                        <TabPanel>
+                              <ShowBalances {...this.props} />
+                        </TabPanel>
+                        <TabPanel>
+                              <Ticker {...this.props} />
+                        </TabPanel>
+                        <TabPanel>
+                              <OpenOrders {...this.props} />
+                        </TabPanel>
+                  </Tabs>
             </div>);
       }
  }

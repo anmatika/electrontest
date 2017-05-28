@@ -1,15 +1,29 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Grid from './Grid';
 
 const ShowBalances = ({ state, getBalancesAsync }) => {
-    function onClick(e) {
+    function onClick() {
         getBalancesAsync();
     }
+
+    function getRows() {
+        if (!state.balances) return [];
+
+        return state.balances
+        .filter(b => b.value > 0)
+        .map(b => ({ currency: b.key, balance: b.value }));
+    }
+
+    const columns = [
+        { key: 'currency', name: 'Currency' },
+        { key: 'balance', name: 'Balance' },
+    ];
+
     return (
     <div>
-          ShowBalances
-          <textarea value={state.balances} />
-          <button onClick={onClick}>Show balances</button>
+        <h2>Balances</h2>
+        <Grid rows={getRows()} columns={columns} />
+        <button onClick={onClick}>Show balances</button>
     </div>);
  };
 

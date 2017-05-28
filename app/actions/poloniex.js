@@ -2,6 +2,7 @@
 import tradingApi from './tradingApi';
 import streamApi from './streamApi';
 import keys from '../../../keys/apikeys';
+import objectHelper from '../utils/objectHelper';
 
 export const GET_BALANCES = 'GET_BALANCES';
 export const SHOW_TICKER = 'SHOW_TICKER';
@@ -41,7 +42,8 @@ export function getBalancesAsync() {
        api.returnBalances()
       .then((res) => {
         console.log(res.body);
-        return dispatch(getBalances(res.body));
+        return dispatch(getBalances(
+          objectHelper.getNonEmptyArrayValuesFromObject(JSON.parse(res.body))))
       }).catch(err => console.log('err', err));
   };
 }

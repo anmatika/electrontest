@@ -6,6 +6,8 @@ import { configureStore, history } from './store/configureStore';
 import './app.global.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
+import 'react-tabs/style/react-tabs.css';
+
 const store = configureStore();
 
 render(
