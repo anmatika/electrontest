@@ -1,7 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import ReactDataGrid from 'react-data-grid';
 import { Link } from 'react-router-dom';
+import Grid from './Grid';
 
 const OpenOrders = ({ state, showOpenOrdersAsync }) => {
     function onClick(e) {
@@ -13,38 +13,11 @@ const OpenOrders = ({ state, showOpenOrdersAsync }) => {
         return state.OpenOrders;
     }
 
-    const columns = [
-      { key: 'id', name: 'ID' },
-      { key: 'title', name: 'Title' },
-      { key: 'count', name: 'Count' }];
-
-  function createRows() {
-        const rows = [];
-        for (let i = 1; i < 1000; i++) {
-        rows.push({
-            id: i,
-            title: `Title ${i}`,
-            count: i * 1000
-        });
-        }
-
-    return rows;
-  }
-
-  const rows = createRows();
-  function rowGetter(i) {
-      return rows[i];
-  }
-
+    
   return (
     <div>
           OpenOrders
-          <ReactDataGrid
-            columns={columns}
-            rowGetter={rowGetter}
-            rowsCount={rows.length}
-            minHeight={500}
-          />
+          <Grid />
 
           <textarea value={'foo'} />
           <button onClick={onClick}>Show OpenOrders</button>
