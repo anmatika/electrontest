@@ -1495,6 +1495,10 @@ boom@2.x.x:
   dependencies:
     hoek "2.x.x"
 
+bootstrap@^3.3.7:
+  version "3.3.7"
+  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-3.3.7.tgz#5a389394549f23330875a3b150656574f8a9eb71"
+
 boxen@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/boxen/-/boxen-1.0.0.tgz#b2694baf1f605f708ff0177c12193b22f29aaaab"
@@ -1525,10 +1529,6 @@ braces@^1.8.2:
 brorand@^1.0.1:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/brorand/-/brorand-1.1.0.tgz#12c25efe40a45e3c323eb8675a0a0ce57b22371f"
-
-browser-request@^0.3.3:
-  version "0.3.3"
-  resolved "https://registry.yarnpkg.com/browser-request/-/browser-request-0.3.3.tgz#9ece5b5aca89a29932242e18bf933def9876cc17"
 
 browser-resolve@^1.11.2:
   version "1.11.2"
@@ -6251,14 +6251,13 @@ pluralize@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/pluralize/-/pluralize-1.2.1.tgz#d1a21483fd22bb41e58a12fa3421823140897c45"
 
-poloniex-api@^1.0.7:
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/poloniex-api/-/poloniex-api-1.0.7.tgz#c7b940b08ce496dd5ef1579397cdabd8d3331ac4"
+poloniex-api@^1.0.8:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/poloniex-api/-/poloniex-api-1.0.9.tgz#8f4a32f79e0057428b9c1f471ae22f133fb35a41"
   dependencies:
     autobahn "^17.5.1"
-    browser-request "^0.3.3"
     nonce "^1.0.4"
-    request "^0.3.3"
+    request "^2.81.0"
     superagent "^3.5.2"
     url "^0.11.0"
 
@@ -6758,6 +6757,10 @@ react-bootstrap@^0.31.0:
     uncontrollable "^4.1.0"
     warning "^3.0.0"
 
+react-data-grid@^2.0.44:
+  version "2.0.44"
+  resolved "https://registry.yarnpkg.com/react-data-grid/-/react-data-grid-2.0.44.tgz#73ef51e40cba2b49ea8d68701f9fa01ad51b0737"
+
 react-deep-force-update@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/react-deep-force-update/-/react-deep-force-update-1.0.1.tgz#f911b5be1d2a6fe387507dd6e9a767aa2924b4c7"
@@ -7113,7 +7116,7 @@ replace-ext@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/replace-ext/-/replace-ext-0.0.1.tgz#29bbd92078a739f0bcce2b4ee41e837953522924"
 
-request@2, request@^0.3.3, request@^2.45.0, request@^2.65.0, request@^2.69.0, request@^2.79.0, request@^2.81.0, request@~2.81.0:
+request@2, request@^2.45.0, request@^2.65.0, request@^2.69.0, request@^2.79.0, request@^2.81.0, request@~2.81.0:
   version "2.81.0"
   resolved "https://registry.yarnpkg.com/request/-/request-2.81.0.tgz#c6928946a0e06c5f8d6f8a9333469ffda46298a0"
   dependencies:
