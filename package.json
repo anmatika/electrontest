@@ -184,6 +184,7 @@
     "webpack-merge": "^4.1.0"
   },
   "dependencies": {
+    "bootstrap": "^3.3.7",
     "crypto-js": "^3.1.9-1",
     "electron-debug": "^1.1.0",
     "extract-text-webpack-plugin": "^2.1.0",
@@ -192,6 +193,7 @@
     "poloniex-api": "^1.0.8",
     "react": "^15.5.4",
     "react-bootstrap": "^0.31.0",
+    "react-data-grid": "^2.0.44",
     "react-dom": "^15.5.4",
     "react-hot-loader": "3.0.0-beta.6",
     "react-redux": "^5.0.4",

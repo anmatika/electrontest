@@ -10,10 +10,6 @@ const ShowBalances = ({ state, getBalancesAsync }) => {
           ShowBalances
           <textarea value={state.balances} />
           <button onClick={onClick}>Show balances</button>
-
-          <Link to="/">
-             <i className="fa fa-arrow-left fa-3x" />
-          </Link>
     </div>);
  };
 

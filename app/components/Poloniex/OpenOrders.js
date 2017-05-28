@@ -1,25 +1,33 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Grid from './Grid';
 
 const OpenOrders = ({ state, showOpenOrdersAsync }) => {
     function onClick(e) {
         showOpenOrdersAsync();
     }
-    function prune () {
-    //     return `${state.openOrders[0].key}: amount: ${state.openOrders[0].values[0].amount}`;
-        const keys = Object.keys(state.OpenOrders);
-        return state.OpenOrders;
+    function getRows() {
+        const rows = [];
+        if (!state.openOrders) return rows;
+
+        state.openOrders.forEach((currency) => {
+            const row = { currency: currency.key };
+            currency.value.forEach((value) => {
+                row.amount = value.amount;
+                row.rate = value.rate;
+                row.total = value.total;
+                row.type = value.type;
+            });
+            rows.push(row);
+        });
+        return rows;
     }
 
-    return (
+  return (
     <div>
           OpenOrders
-          <textarea value={'foo'} />
+          <Grid rows={getRows()} />
           <button onClick={onClick}>Show OpenOrders</button>
-
-          <Link to="/">
-             <i className="fa fa-arrow-left fa-3x" />
-          </Link>
     </div>);
  };
 
