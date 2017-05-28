@@ -1,38 +1,30 @@
 import React from 'react';
 import ReactDataGrid from 'react-data-grid';
+import './Grid.css';
 
-const Grid = () => {
-const columns = [
-      { key: 'id', name: 'ID' },
-      { key: 'title', name: 'Title' },
-      { key: 'count', name: 'Count' }];
+const Grid = ({ rows }) => {
+    const columns = [
+        { key: 'currency', name: 'Currency' },
+        { key: 'amount', name: 'Amount' },
+        { key: 'type', name: 'Type' },
+        { key: 'total', name: 'Total' },
+        { key: 'rate', name: 'Rate' }
+        ];
 
-  function createRows() {
-        const rows = [];
-        for (let i = 1; i < 1000; i++) {
-        rows.push({
-            id: i,
-            title: `Title ${i}`,
-            count: i * 1000
-        });
-        }
+   
+    function rowGetter(i) {
+        return rows[i];
+    }
+    if (rows.length === 0) return (<div />);
+     return (
 
-    return rows;
-  }
-
-  const rows = createRows();
-  function rowGetter(i) {
-      return rows[i];
-  }
-  return (
-
-    <ReactDataGrid
-      columns={columns}
-      rowGetter={rowGetter}
-      rowsCount={rows.length}
-      minHeight={500}
-    />
-  );
+      <ReactDataGrid
+        columns={columns}
+        rowGetter={rowGetter}
+        rowsCount={rows.length}
+        minHeight={500}
+      />
+    );
 };
 
 export default Grid;

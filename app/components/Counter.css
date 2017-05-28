@@ -1,5 +1,10 @@
 .backButton {
   position: absolute;
+  color: black;
+}
+
+.fa {
+  color: black !important;
 }
 
 .counter {
@@ -11,7 +16,7 @@
   letter-spacing: -0.025em;
 }
 
-.btnGroup {
+/*.btnGroup {
   position: relative;
   top: 500px;
   width: 480px;
@@ -34,4 +39,4 @@
 .btn:hover {
   color: white;
   background-color: rgba(0, 0, 0, 0.5);
-}
+}*/
