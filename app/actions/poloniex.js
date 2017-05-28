@@ -90,6 +90,16 @@ export function buyAsync({ currencyPair, amount, rate }) {
   };
 }
 
+export function cancelOrderAsync(orderNumber) {
+  return (dispatch: () => void, getState) => {
+    api.cancelOrder({ orderNumber })
+      .then((res) => {
+        console.log(res.body);
+        return dispatch(showMessage(res.body));
+      }).catch(err => showMessage(err));
+  };
+}
+
 export function showTickerAsync() {
   return (dispatch: () => void, getState) => {
     streamApi.create({ subscriptionName: 'ticker' }, (msg) => {

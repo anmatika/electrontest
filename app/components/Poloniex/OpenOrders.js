@@ -1,12 +1,13 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import Grid from './Grid';
-import CancelOrderButton from './CancelOrderButton';
 
-const OpenOrders = ({ state, showOpenOrdersAsync }) => {
+const OpenOrders = ({ state, showOpenOrdersAsync, cancelOrderAsync }) => {
     function onClick() {
         showOpenOrdersAsync();
     }
+
+    const CancelOrderButton = ({ value }) => (<button onClick={() => cancelOrderAsync(value)}>Cancel</button>);
 
     function getRows() {
         const rows = [];
@@ -20,7 +21,8 @@ const OpenOrders = ({ state, showOpenOrdersAsync }) => {
                     rate: value.rate,
                     total: value.total,
                     type: value.type,
-                    orderNumber: value.orderNumber
+                    orderNumber: value.orderNumber,
+                    cancelOrder: value.orderNumber
                 };
                 rows.push(row);
             });

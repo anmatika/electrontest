@@ -5,6 +5,7 @@ import ShowBalances from './ShowBalances';
 import Ticker from './Ticker';
 import OpenOrders from './OpenOrders';
 import Buy from './Buy';
+import Message from '../Message';
 
 class Poloniex extends React.Component {
       componentDidMount() {
@@ -17,6 +18,7 @@ class Poloniex extends React.Component {
                   <Link to="/">
                         <i className="fa fa-arrow-left fa-3x" />
                   </Link>
+                  <Message {...this.props} />
                   <Tabs>
                         <TabList>
                               <Tab>Balances</Tab>
