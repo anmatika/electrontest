@@ -1,5 +1,5 @@
 // import { tradingApi } from 'poloniex-api';
-import tradingApi from './tradingApi';
+import poloniexApi from 'poloniex-api';
 import streamApi from './streamApi';
 import keys from '../../../keys/apikeys';
 import objectHelper from '../utils/objectHelper';
@@ -11,7 +11,7 @@ export const SET_INITIAL_VALUES = 'SET_INITIAL_VALUES';
 export const BUY = 'BUY';
 export const SHOW_MESSAGE = 'SHOW_MESSAGE';
 
-const api = tradingApi.create(keys.poloniex_api_key, keys.poloniex_secret);
+const api = poloniexApi.tradingApi.create(keys.poloniex_api_key, keys.poloniex_secret);
 
 export function setInitialValues() {
   return {
