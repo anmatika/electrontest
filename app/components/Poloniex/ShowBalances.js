@@ -1,16 +1,18 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
+import { connect } from 'react-redux';
 import Grid from './Grid';
+import * as actions from '../../actions/poloniex';
 
-const ShowBalances = ({ state, getBalancesAsync }) => {
+const ShowBalances = (props) => {
     function onClick() {
-        getBalancesAsync();
+        props.dispatch(actions.getBalancesAsync());
     }
 
     function getRows() {
-        if (!state.balances) return [];
+        if (!props.state.balances) return [];
 
-        return state.balances
+        return props.state.balances
         .filter(b => b.value > 0)
         .map(b => ({ currency: b.key, balance: b.value }));
     }
@@ -28,4 +30,4 @@ const ShowBalances = ({ state, getBalancesAsync }) => {
     </div>);
  };
 
-export default ShowBalances;
+export default connect((state) => ({ state: state.poloniex }))(ShowBalances);

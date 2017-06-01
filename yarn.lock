@@ -6259,9 +6259,9 @@ pluralize@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/pluralize/-/pluralize-1.2.1.tgz#d1a21483fd22bb41e58a12fa3421823140897c45"
 
-poloniex-api@^1.0.8:
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/poloniex-api/-/poloniex-api-1.0.9.tgz#8f4a32f79e0057428b9c1f471ae22f133fb35a41"
+poloniex-api@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/poloniex-api/-/poloniex-api-1.1.0.tgz#ff5a6b6a170be281024347bbccfe3495bc82480d"
   dependencies:
     autobahn "^17.5.1"
     nonce "^1.0.4"

@@ -19,13 +19,6 @@ export function setInitialValues() {
   };
 }
 
-export function buy(data) {
-  return {
-      type: BUY,
-      data
-  };
-}
-
 export function getBalances(data) {
   return {
       type: GET_BALANCES,
@@ -77,12 +70,26 @@ export function showOpenOrdersAsync() {
 
 export function buyAsync({ currencyPair, amount, rate }) {
   return (dispatch: () => void, getState) => {
-    api.buy({ currencyPair, amount, rate }).then(msg => {
+    return dispatch(showMessage('foobar'));
+    // api.buy({ currencyPair, amount, rate }).then(msg => {
+    //   const converted = objectHelper.objectToArray(JSON.parse(msg.body));
+    //   if (!converted.orderNumber) {
+    //     return dispatch(showMessage(msg.body));
+    //   }
+    //   return dispatch(showMessage(msg.body));
+    // }).catch(err => {
+    //   dispatch(showMessage(err));
+    // });
+  };
+}
+
+export function sellAsync({ currencyPair, amount, rate }) {
+  return (dispatch: () => void, getState) => {
+    api.sell({ currencyPair, amount, rate }).then(msg => {
       const converted = objectHelper.objectToArray(JSON.parse(msg.body));
       if (!converted.orderNumber) {
         return dispatch(showMessage(msg.body));
       }
-      dispatch(buy(converted));
       return dispatch(showMessage(msg.body));
     }).catch(err => {
       dispatch(showMessage(err));
